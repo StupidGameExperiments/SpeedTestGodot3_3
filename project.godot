@@ -13,15 +13,27 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
+}, {
+"base": "Resource",
+"class": "primeSieve",
+"language": "GDScript",
+"path": "res://primeSieve.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": ""
+"GitAPI": "",
+"primeSieve": ""
 }
 
 [application]
 
 config/name="SpeedTestGodot3.3"
+run/main_scene="res://Menu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [gdnative]
 
@@ -33,4 +45,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

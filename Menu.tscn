@@ -1,0 +1,216 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://DF_OCRA.tres" type="DynamicFont" id=1]
+[ext_resource path="res://DFD_OCRA.tres" type="DynamicFontData" id=2]
+[ext_resource path="res://SpeedTest.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 15
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Control"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+margin_right = 245.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+margin_right = 245.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Primes 
+up to:"
+align = 1
+
+[node name="OB_Primes" type="OptionButton" parent="Panel/HBoxContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 245.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 1
+items = [ "10", null, false, 1, null, "100", null, false, 2, null, "1000", null, false, 3, null, "10000", null, false, 4, null, "100000", null, false, 5, null, "1000000", null, false, 6, null ]
+selected = 0
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+margin_top = 138.0
+margin_right = 245.0
+margin_bottom = 209.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Run for 
+(secs):"
+align = 1
+
+[node name="OB_RunTime" type="OptionButton" parent="Panel/HBoxContainer/VBoxContainer"]
+margin_top = 219.0
+margin_right = 245.0
+margin_bottom = 253.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "1"
+align = 1
+items = [ "1", null, false, 1, null, "2", null, false, 2, null, "3", null, false, 3, null, "4", null, false, 4, null, "5", null, false, 5, null ]
+selected = 0
+
+[node name="BTN_Run" type="Button" parent="Panel/HBoxContainer/VBoxContainer"]
+margin_top = 263.0
+margin_right = 245.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "Run"
+
+[node name="BTN_Clear" type="Button" parent="Panel/HBoxContainer/VBoxContainer"]
+margin_top = 307.0
+margin_right = 245.0
+margin_bottom = 341.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "Clear"
+
+[node name="BTN_Clear2" type="Button" parent="Panel/HBoxContainer/VBoxContainer"]
+margin_top = 351.0
+margin_right = 245.0
+margin_bottom = 385.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer"]
+margin_left = 249.0
+margin_right = 984.0
+margin_bottom = 560.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer2"]
+margin_right = 735.0
+margin_bottom = 34.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Results"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer2"]
+margin_top = 38.0
+margin_right = 735.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+custom_constants/separation = 17
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 84.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "Batch #"
+align = 1
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 101.0
+margin_right = 244.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "Primes up to:"
+align = 1
+
+[node name="Label3" type="Label" parent="Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 261.0
+margin_right = 426.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "Time Limit (ms)"
+align = 1
+
+[node name="Label4" type="Label" parent="Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 443.0
+margin_right = 619.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "Actual Time (ms)"
+align = 1
+
+[node name="Label5" type="Label" parent="Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 636.0
+margin_right = 735.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "# of Runs"
+align = 1
+
+[node name="SC_Results" type="ScrollContainer" parent="Panel/HBoxContainer/VBoxContainer2"]
+margin_top = 63.0
+margin_right = 735.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer2/SC_Results"]
+margin_right = 735.0
+size_flags_horizontal = 3
+
+[connection signal="item_selected" from="Panel/HBoxContainer/VBoxContainer/OB_Primes" to="." method="setPrimesTo"]
+[connection signal="item_selected" from="Panel/HBoxContainer/VBoxContainer/OB_RunTime" to="." method="setRunLength"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/BTN_Run" to="." method="runSieve"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/BTN_Clear2" to="." method="quit"]
